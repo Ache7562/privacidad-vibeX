@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Privacy Policy - vibeX</title>
+    <title>vibeX - Privacy & Agreement</title>
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -28,7 +28,26 @@
             font-size: 2.5rem;
         }
 
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
         section {
+            display: none;
             max-width: 900px;
             margin: 30px auto;
             padding: 20px;
@@ -37,16 +56,8 @@
             border-radius: 12px;
         }
 
-        section h2 {
-            color: #1a73e8;
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        section p {
-            line-height: 1.6;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
+        section.active {
+            display: block;
         }
 
         footer {
@@ -63,65 +74,55 @@
         }
 
         @media screen and (max-width: 768px) {
-            section {
-                margin: 15px;
-            }
-
             header h1 {
                 font-size: 2rem;
             }
-
-            section h2 {
-                font-size: 1.5rem;
-            }
-
-            section p {
-                font-size: 1rem;
-            }
         }
     </style>
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
 </head>
 
-<body>
+<body onload="showSection('privacy')">
+
     <header>
-        <h1>Privacy Policy</h1>
-        <p>Last updated: October 2024</p>
+        <h1>vibeX - Privacy & Agreement</h1>
     </header>
 
-    <section>
-        <h2>1. Introduction</h2>
+    <nav>
+        <a href="javascript:void(0)" onclick="showSection('privacy')">Privacy Policy</a>
+        <a href="javascript:void(0)" onclick="showSection('agreement')">Agreement Link</a>
+    </nav>
+
+    <section id="privacy" class="active">
+        <h2>Privacy Policy</h2>
+        <p>Last updated: October 2024</p>
         <p>At vibeX, we respect your privacy and are committed to protecting the personal information you share with us.
             This privacy policy outlines how we collect, use, and protect your data as part of our academic project.</p>
-
-        <h2>2. Information We Collect</h2>
         <p>We collect health-related data, such as body mass index, heart rate, stress levels, blood pressure, body
-            temperature, sleep patterns,
-            and other metrics, through Huawei devices linked to our application.</p>
+            temperature, sleep patterns, and other metrics, through Huawei devices linked to our application.</p>
+        <!-- Rest of the privacy policy here -->
+    </section>
 
-        <h2>3. How We Use Your Information</h2>
-        <p>The data collected is exclusively used to provide health analysis and improve the user experience in the app.
-            Your data is not shared or sold to third parties without your explicit consent. All data usage is intended
-            for educational purposes
-            as part of an academic project.</p>
-
-        <h2>4. Data Protection</h2>
-        <p>We implement adequate security measures to protect your personal information. We ensure that collected data
-            is not lost, misused, or accessed without authorization.</p>
-
-        <h2>5. Academic Project</h2>
-        <p>This project will not be published in app stores or used for commercial purposes. It is a research and
-            development project conducted by university students for educational purposes.
-            All data collected is subject to strict privacy policies for this specific purpose.</p>
-
-        <h2>6. Contact</h2>
-        <p>If you have any questions or concerns about this privacy policy, you can contact us at:
-            <strong>pabloferhdc2@gmail.com</strong>.
-        </p>
+    <section id="agreement">
+        <h2>User Agreement</h2>
+        <p>This is the user agreement section, where you outline the terms and conditions that users agree to by using
+            the application.</p>
+        <p>Your user agreement might include clauses about data usage, user responsibilities, and disclaimers regarding
+            the academic nature of the project.</p>
+        <!-- Add agreement details here -->
     </section>
 
     <footer>
         <p>&copy; 2024 vibeX. All rights reserved.</p>
     </footer>
+
 </body>
 
 </html>
